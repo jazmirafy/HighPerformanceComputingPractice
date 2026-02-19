@@ -19,10 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="A2Question1.cpp" />
+    <ClInclude Include="StopWatch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="StopWatch.h" />
+    <ClCompile Include="ParallelVectorAddition.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

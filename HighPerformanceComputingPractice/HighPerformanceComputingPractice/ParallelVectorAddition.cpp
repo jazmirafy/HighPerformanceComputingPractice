@@ -23,15 +23,18 @@ int c[24]; // there are 24 elements in a and b
 //thread_id = the thread id for current active thread
 //size = data partition size
 void myThreadMethod(int thread_id, int size) {
-	for (int i = thread_id * size; i < (thread_id + 1) * size; i++)
-	{
+
+	//allow the thread to determine what section of data it needs to work on
+	int start = thread_id * size;
+	int end = (thread_id + 1) * size;
+
 		// adds elements of a and b together and assigns it to the corresponding index in c
-		for (int i = 0; i < 24; i++)
+		for (int i = start; i < end; i++)
 		{
 			c[i] = a[i] + b[i];
 		}
-	}
-	//we wont need a mutex lock in this case because each thread is manipulating a different part of the array
+	
+	//we wont need a mutex lock in this case because each thread is manipulating a different part of the c array
 	//since the threads aren't manipulating the same elements of array c, we won't have to worry about non deterministic results
 }
 
