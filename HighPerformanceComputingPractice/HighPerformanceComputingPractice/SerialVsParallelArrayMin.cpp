@@ -104,12 +104,11 @@ void myThreadMethod(int array[], int thread_id, int threadCount) {
 	//find the minimum of the threads local section of c
 
 	//after finding the minimum, compare if the local minimum is less than the global minimum
-	{
-		//use a lock before adjusting the global min variable to prevent non deterministic results
-		mtx.lock();
-		if (myMin < sharedMin) {
-			sharedMin = myMin;
-		}
+	
+	//use a lock before adjusting the global min variable to prevent non deterministic results
+	mtx.lock();
+	if (myMin < sharedMin) {
+		sharedMin = myMin;
 	}
 	//stop the stopwatch and print how long the individual thread took
 	sw.stop();
@@ -162,5 +161,6 @@ int main() {
 	startThreads(4);
 	//print the parallel min
 	cout << "The parallel programs min is: " << sharedMin << endl;
+
 
 }
