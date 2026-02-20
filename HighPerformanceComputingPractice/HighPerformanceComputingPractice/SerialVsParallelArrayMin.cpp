@@ -72,7 +72,7 @@ void mySerialMethod(int array[]) {
 
 	//end the stopwatch and print how long the serial program too
 	sw.stop();
-	cout << "The serial program took " << sw.elapsedTime() << " seconds to finish" << endl;
+	cout << "The serial program took " << sw.elapsedTime() << " ms to finish" << endl;
 }
 
 void myThreadMethod(int array[], int thread_id, int threadCount) {
@@ -112,7 +112,7 @@ void myThreadMethod(int array[], int thread_id, int threadCount) {
 	}
 	//stop the stopwatch and print how long the individual thread took
 	sw.stop();
-	cout << "Thread " << thread_id << " took " << sw.elapsedTime() << " seconds to finish" << endl;
+	cout << "Thread " << thread_id << " took " << sw.elapsedTime() << " ms to finish" << endl;
 	//unlock now that thread is finished
 	mtx.unlock();
 	
